@@ -1,0 +1,33 @@
+public class mes{
+
+    int año = 0;
+
+    public static int diasDelMes(int mes, int año){
+        switch(mes){
+            case 0:  // Enero
+            case 2:  // Marzo
+            case 4:  // Mayo
+            case 6:  // Julio
+            case 7:  // Agosto
+            case 9:  // Octubre
+            case 11: // Diciembre
+                return 31;
+            case 3:  // Abril
+            case 5:  // Junio
+            case 8:  // Septiembre
+            case 10: // Noviembre
+                return 30;
+            case 1:  // Febrero
+                if ( ((año%100 == 0) && (año%400 == 0)) ||
+                        ((año%100 != 0) && (año%  4 == 0))   )
+                    return 29;  // Año Bisiesto
+                else
+                    return 28;
+            default:
+            System.out.println("El mes debe estar entre 0 y 11");
+        }
+    }
+    public static void main(String[] args) {
+        
+    }
+}
